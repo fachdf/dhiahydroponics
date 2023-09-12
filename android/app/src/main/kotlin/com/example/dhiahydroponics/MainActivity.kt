@@ -1,4 +1,4 @@
-package com.example.dhiahydroponics
+package com.dhia.hydroponics
 
 import io.flutter.embedding.android.FlutterActivity
 

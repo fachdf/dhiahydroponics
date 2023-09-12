@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735711669612",
+    "project_id": "dhiahidroponik-49016",
+    "storage_bucket": "dhiahidroponik-49016.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735711669612:android:855dd856da036eb5109749",
+        "android_client_info": {
+          "package_name": "com.dhia.hydroponics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQT-iLrXFs1GWhiUKBBJ_DCOZ9nZlKLOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
