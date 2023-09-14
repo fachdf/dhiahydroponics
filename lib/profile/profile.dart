@@ -1,3 +1,4 @@
+import 'package:dhiahydroponics/services/auth.dart';
 import 'package:dhiahydroponics/shared/bottomnavbar.dart';
 import 'package:flutter/material.dart';
 
@@ -7,8 +8,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: BottomNavBar(),
+      appBar: AppBar(
+        title: Text('Profile'),
+      ),
+      body: ElevatedButton(
+          child: Text('signout'),
+          onPressed: () async {
+            await AuthService().signOut();
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil('/', (route) => false);
+          }),
     );
   }
 }
