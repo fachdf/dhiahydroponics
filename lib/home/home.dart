@@ -1,11 +1,9 @@
-import 'package:dhiahydroponics/homepage/homepage.dart';
-import 'package:dhiahydroponics/shared/bottomnavbar.dart';
 import 'package:dhiahydroponics/topics/topics.dart';
 import 'package:flutter/material.dart';
 import 'package:dhiahydroponics/services/auth.dart';
 import 'package:dhiahydroponics/login/login.dart';
-
-
+import 'package:dhiahydroponics/shared/shared.dart';
+import 'package:dhiahydroponics/homepage/homepage.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -14,15 +12,15 @@ class HomeScreen extends StatelessWidget {
     return StreamBuilder(
       stream: AuthService().userStream,
       builder: (context, snapshot) {
-        if(snapshot.connectionState == ConnectionState.waiting){
-          return const Text("Loading..");
-        }else if(snapshot.hasError){
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const LoadingScreen();
+        } else if (snapshot.hasError) {
           return const Center(
-            child: Text('error'),
+            child: ErrorMessage(),
           );
-        }else if(snapshot.hasData){
+        } else if (snapshot.hasData) {
           return const HomePage();
-        }else{
+        } else {
           return const LoginScreen();
         }
       },
