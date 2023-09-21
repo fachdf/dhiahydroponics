@@ -1,49 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
+
+  @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _currentIndex = 0; // Track the currently selected index.
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(
-            FontAwesomeIcons.houseChimney,
-            size: 20,
-          ),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            FontAwesomeIcons.graduationCap,
-            size: 20,
-          ),
-          label: 'Topics',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            FontAwesomeIcons.bolt,
-            size: 20,
-          ),
-          label: 'About',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(
-            FontAwesomeIcons.circleUser,
-            size: 20,
-          ),
-          label: 'Profile',
-        ),
+      currentIndex: _currentIndex,
+      items: [
+        _buildNavItem(FontAwesomeIcons.houseChimney, 'Home', 0),
+        _buildNavItem(FontAwesomeIcons.graduationCap, 'Topics', 1),
+        _buildNavItem(FontAwesomeIcons.bolt, 'About', 2),
+        _buildNavItem(FontAwesomeIcons.circleUser, 'Profile', 3),
       ],
-      //fixedColor: Colors.deepPurple[200],
-      selectedItemColor: Colors.red,
-      unselectedItemColor: Colors.grey,
       onTap: (int idx) {
+        setState(() {
+          _currentIndex = idx; // Update the selected index.
+        });
         switch (idx) {
           case 0:
-            Navigator.pushNamed(context, '/home');
+            Navigator.pushNamed(context, '/');
             break;
           case 1:
             Navigator.pushNamed(context, '/topics');
@@ -56,6 +40,24 @@ class BottomNavBar extends StatelessWidget {
             break;
         }
       },
+    );
+  }
+
+  BottomNavigationBarItem _buildNavItem(IconData icon, String label, int index) {
+    return BottomNavigationBarItem(
+      icon: GestureDetector(
+        onTap: () {
+          setState(() {
+            _currentIndex = index; // Update the selected index.
+          });
+        },
+        child: Icon(
+          icon,
+          size: 20,
+          color: _currentIndex == index ? Colors.red : Colors.grey,
+        ),
+      ),
+      label: label,
     );
   }
 }
