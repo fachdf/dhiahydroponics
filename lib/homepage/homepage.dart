@@ -1,4 +1,4 @@
-import 'package:dhiahydroponics/shared/bottomnavbar.dart';
+import 'package:dhiahydroponics/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:dhiahydroponics/services/auth.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

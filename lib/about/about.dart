@@ -1,4 +1,4 @@
-import 'package:dhiahydroponics/shared/bottomnavbar.dart';
+import 'package:dhiahydroponics/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {

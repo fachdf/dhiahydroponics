@@ -10,6 +10,13 @@ class BottomNavBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(
+            FontAwesomeIcons.houseChimney,
+            size: 20,
+          ),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
             FontAwesomeIcons.graduationCap,
             size: 20,
           ),
@@ -30,16 +37,21 @@ class BottomNavBar extends StatelessWidget {
           label: 'Profile',
         ),
       ],
-      fixedColor: Colors.deepPurple[200],
+      //fixedColor: Colors.deepPurple[200],
+      selectedItemColor: Colors.red,
+      unselectedItemColor: Colors.grey,
       onTap: (int idx) {
         switch (idx) {
           case 0:
-            // do nothing
+            Navigator.pushNamed(context, '/home');
             break;
           case 1:
-            Navigator.pushNamed(context, '/about');
+            Navigator.pushNamed(context, '/topics');
             break;
           case 2:
+            Navigator.pushNamed(context, '/about');
+            break;
+          case 3:
             Navigator.pushNamed(context, '/profile');
             break;
         }
