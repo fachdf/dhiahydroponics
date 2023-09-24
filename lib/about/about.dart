@@ -7,7 +7,10 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text('Home'),
+      )
     );
   }
 }

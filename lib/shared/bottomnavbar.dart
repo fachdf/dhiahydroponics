@@ -5,14 +5,14 @@ import 'package:dhiahydroponics/topics/topics.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class BottomNavBarC extends StatefulWidget {
-  const BottomNavBarC({super.key});
+class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
 
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBarC> {
+class _BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0; // Track the currently selected index.
   final PageController _pageController = PageController(initialPage: 0);
 
